@@ -1,0 +1,187 @@
+<html lang="hu" class="no-js">
+				<head>
+					<meta charset="UTF-8">
+					<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+					<meta http-equiv="ScreenOrientation" content="autoRotate:enabled">  
+					
+					<title>Kultúralexikon - bejelentkezés</title>
+
+					<meta name="description" content="Ismeretterjeszto korosztalytol fuggetlenul, a karpatmedencei kulturak meghatarozasaban" />
+					<meta name="keywords" content="kutúra, minta, régi, kárpátmedence, magyarország, kronológia, ido, rendezés, sorrend, kultúrák, korok, tárgyak, régi, oktatóprogram, kultúrái, minták, tárgyak, múzeumok, tájegységek, oktatás, oktatóprogram, oktat, eucation, history, hungary, e-learning, online, ingyen, szabad" />
+					<meta name="author" content="Vasi Múzeumbarát Egylet" /> 
+
+					<link rel="shortcut icon" href="css/ikonok/kicsi.gif">
+					
+					<link rel="stylesheet" media="all and (orientation:landscape)" href="css/landscape/bejelentkezes.css">
+					<link rel="stylesheet" media="all and (orientation:portrait)" href="css/portrait/bejelentkezes.css">	
+					<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+					<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+					<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+					<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+					
+					<!-- Google -->
+					<meta name="google-signin-client_id" content="512631858867-0rglc7156edjj0aipvihlm8ishs3ki1e.apps.googleusercontent.com">
+					
+					<!-- recaptcha -->
+					<script src='https://www.google.com/recaptcha/api.js'></script>
+					
+				</head>
+				<body>
+					<div id="vissza_keret">
+						<a href="index.html" class="w3-xxxlarge" alt="vissza"><div id="vissza" class="fa fa-arrow-left"></div></a>
+					</div>
+					
+					<div id="bejelentkezes">
+						<div id="cim">
+							<h1>Lépj be!</h1>
+						</div>
+						<div id="social_media_login">
+							<h2>Google fiókoddal</h2>
+							<!-- Google -->
+							
+							<div id="google_signin">
+								<!-- g -->
+								<div id="google_sign_in_button" class="g-signin2" data-onsuccess="onSignIn"></div>
+								<!-- /g -->
+								<div id="google_signed_in"></div>
+							</div>
+							
+							<!-- g -->
+							<script src="https://apis.google.com/js/platform.js" async defer></script> 
+							<script src="js/segedfuggvenyek.js"></script>
+							<script>
+								function onSignIn(googleUser) {
+								  var profile = googleUser.getBasicProfile();
+								  console.log('ID: ' + profile.getId()); // !!
+								  console.log('Name: ' + profile.getName());
+								  console.log('Image URL: ' + profile.getImageUrl());
+								  console.log('Email: ' + profile.getEmail());
+							<!-- /g -->
+									$('#google_sign_in_button').style.display = 'none';
+									if ((typeof profile.getImageUrl() != 'undefined') && (typeof profile.getName() != 'undefined')) {
+										$('#google_signed_in').innerHTML = '<a href="bejelentkezve/bejelentkezve.php"><div id="lepj_be_gomb"> <img id="profilkep" src="' + profile.getImageUrl() + '" alt="profilkep"><div id="lepjbe_szoveg"> Lépj be ' + profile.getName() + '!</div></div></a>';
+									}else if(typeof profile.getName() != 'undefined'){
+										$('#google_signed_in').innerHTML = '<a href="bejelentkezve/bejelentkezve.php"><div id="lepj_be_gomb"><div id="lepjbe_szoveg"> Lépj be ' + profile.getName() + '!</div></div></a>';
+									}else{
+										$('#google_signed_in').innerHTML = '<a href="bejelentkezve/bejelentkezve.php"><div id="lepj_be_gomb"><div id="lepjbe_szoveg"> Lépj be!</div></div></a>';
+									}
+								}
+							</script>
+							
+						</div>
+						
+						<hr>
+						
+						<div id="belepes">
+							<h2>Vagy Kultúralexikon fiókoddal</h2>
+							<form action="bejelentkezik.php" method="post" class="w3-container">
+							  <p>
+								<label>e-mail cím*:</label>
+								<input type="email" name="email" class="w3-input" placeholder="Adja meg a regisztrált e-mail címét!(pl:valami@valamimas.hu)" required autofocus> <br>
+							  </p>
+								
+							  <p>
+								  <label>Jelszó*:</label>
+								  <input type="password" name="jelszo" class="w3-input" placeholder="Adja meg a regisztrációkor megadott jelszavát!" required> <br>
+							  </p>
+								  <div class="g-recaptcha" data-sitekey="6LfR_ycTAAAAALTDDQxgQ7G7lgcggYXVx9DU12G0"></div>
+							  <input class="w3-btn w3-ripple w3-orange" type="submit" name="belep" value="Belépek!">
+							</form>
+							<br>
+							  <a id="emlekzeteto_mail_kerese" href="#emlekezteto_mail_kuldese" class="w3-btn w3-ripple w3-orange"> Elfelejtettem a jelszavam... </a>
+							<div id="belepes_hibak" class="warning">
+							</div>
+						</div>
+						
+					</div>
+					<div id="regisztracio">
+						<div id="regisztracios_ablak">
+							<div id="cim">
+								<h1>Nincs fiókod? </h1><br>
+								<h2>Hozz létre egyet és lépj be!</h2>
+							</div>
+							
+							<div id="minek">
+								
+								<p>
+									<h2> Modern | Ellenőrzött | Ingyenes </h2>
+								</p>
+								<hr>
+								
+								<!-- 
+								<div id="miert_keret">
+									<a href="#miert_leiras">
+										<div id="miert">
+											<h2>Miért jó ha van nálunk fiókod?</h2>
+										</div>
+									</a>
+								</div>
+							
+								<div id="miert_leiras">
+									<p>
+										Mert mi <b>segítünk</b> térben és idoben elhelyezni a kultúrákat, népeket, korokat, nevezetesebb tárgyakat!
+									</p>
+									<p>
+										Mert így egy olyan közösség részévé válsz amely nem csak látja, de <b>érti</b> is a múltat!
+									</p>
+									<p>
+										Mert mindezt <b>érted</b> tesszük, <b>ingyen</b> tesszük!
+									</p>
+									<p>
+										Mert folyamatosan bovítjük és fejlesztjük tudásbázisunkat, ezzel szeretnénk a legnagyobb ilyen jellegu <b>ellenorzött</b> tudásbázist létrehozni!
+									</p>
+									<p>
+										Mert <b>modern</b>, könnyen és gyorsan értheto formában tálaljuk a legbonyolultabb dolgokat is!
+									</p>
+									<p>
+										Mert így mélyrehatóan <b>tesztelheted</b> tudásod egy adott témában!
+									</p>
+								</div>
+								-->
+							</div>
+							
+							<div id="fiok_letrehozasa">
+								<form action="bejelentkezes.php" method="post" class="w3-container">
+								  Név*:
+									<input type="text" name="uj_felhasznalonev" class="w3-input" placeholder="Adja meg nevét!" required> <br>
+								  e-mail cím*:
+									<input type="email" name="uj_email" class="w3-input" placeholder="Adja meg a regisztrálandó e-mail címét!(pl:valami@valamimas.hu)" required> <br>
+								  Jelszó*:
+									<input type="password" name="uj_jelszo" id="uj_jelszo" class="w3-input" placeholder="Adja meg a jelszavát!" required> <br>
+								  Jelszó újra*:
+									  <input type="password" name="uj_jelszoo" id="uj_jelszo2" class="w3-input" placeholder="Adja meg ismét a jelszavát!" required> <br>
+									  <div id="jelszoegyezes" class="warning">
+									  </div>
+								  Jelszóemlékeztető kérdés*:
+									<input type="text" name="uj_felhasznalo_jelszoemlekezteto" class="w3-input" placeholder="Nevezzen meg valamit ami emlékeztetni fogja!" required> <br>
+								  <input class="w3-btn w3-ripple w3-orange" type="submit" name="regisztral" value="Regisztrálok!" id="regisztralok">
+								</form>
+								
+								<div id="regisztracios_hibak" class="warning">
+								</div>			
+								<!-- <script src="js/jelszoegyezes.js"></script> -->
+							
+							</div>
+						</div>
+						
+						<div id="emlekezteto_mail_kuldese">
+							<div id="cim">
+								<h1>Elfelejtette jelszavát? </h1><br>
+								<h2>Segítünk!</h2>
+							</div>
+							<hr>
+							  <div id="cim"><h3>Az emlékeztetőt sikeresen elküldtük!</h3></div>
+							   <h3>Ha nem kapná meg az emlékeztetőt kérjük keresse a "Spam" mappában is!</h3>
+						</div>
+							<script src="designjs/emlekezteto_mail.js"></script>
+							<script>
+								//emlekezteto kerdes ablak mutat
+								i=1;
+								emlekeztetoMutat();
+							</script>
+					</div>
+					
+				</body>
+				
+			</html>
