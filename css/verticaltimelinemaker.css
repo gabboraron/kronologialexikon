@@ -1,0 +1,11 @@
+.quote{
+    background-color: #303E49;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#new_event{
+	font-weight: bold;
+	border-radius: 25px;
+}

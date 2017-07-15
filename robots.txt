@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /bejelentkezve/
+Disallow: /js/
+Disallow: /designjs/

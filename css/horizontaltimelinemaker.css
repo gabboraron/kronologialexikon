@@ -1,0 +1,26 @@
+#editor_frame{
+	background-color: #2D2F33;
+}
+
+#editor{
+	background-color: white;
+}
+
+#large_content{
+	display: none;
+}
+
+#timeline-embed{
+	display: none;
+}
+
+#timeline-embed2{
+	display: none;
+}
+
+.welcome_title{
+	padding-top: 20%;
+	padding-bottom: 20%;
+	padding-left: 5%;
+	font-size: 250%;
+}

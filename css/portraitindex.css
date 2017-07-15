@@ -1,0 +1,14 @@
+#elerhetosegek-desktop{
+	display: none; 
+}
+
+#elerhetosegek-mobil{
+	text-align: center; 
+}
+
+#elerhetosegek-mobil a{
+	color: rgb(249, 229, 147);
+}
+
+#elerhetosegek-mobil a:hover{
+	color:  rgb(237, 158, 30);

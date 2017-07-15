@@ -1,0 +1,8 @@
+body {
+    /* The image used */
+    background-image: url("kepek/hatter.jpg");
+}
+
+#allomenu{
+	display: none; 
+}

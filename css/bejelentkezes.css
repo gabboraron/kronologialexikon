@@ -1,0 +1,67 @@
+body {
+	background-color: black;
+    /* The image used */
+    background-image: url("kepek/hatter.jpg");
+
+    /* Set a specific height */
+    /*min-height: 500px; */
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#cim{
+	color:white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#menu{
+	background-color: rgb(65, 69, 76);
+	color: white;
+}
+
+a {
+	background-color: rgb(45, 47, 51);
+	color: white;
+	text-decoration:none;
+}
+
+a:hover {
+	color: rgb(237, 158, 30);
+}
+
+a:active {
+	color: rgb(242, 177, 72)
+}
+
+li {
+	background-color: rgb(45, 47, 51);
+	color: white;
+}
+
+.top-bar{
+	background-color: rgb(45, 47, 51);
+}
+
+#bejelentkezes{
+	background-color: rgb(99, 101, 104);
+	/*background-color: rgb(237, 238, 239);*/
+}	
+
+#regisztracio{
+	background-color: rgb(99, 101, 104);
+	/*background-color: rgb(237, 238, 239);*/
+}	
+
+.Gombok{
+	/*background-color: rgb(65, 69, 76);*/
+	border: 0px;
+}
+
+.form-error{
+	background-color: red;
+	color: white;
+}
