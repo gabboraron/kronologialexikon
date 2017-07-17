@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Timeline Creator</title>
+	
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	
+	<link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/app.css">
+
+	<!-- for the timeline -->
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<!-- -->
+
+	<link rel="stylesheet" href="../css/horizontaltimelinemaker.css">
+	<link rel="stylesheet" href="../css/verticaltimelinemaker.css">
+	<link rel="stylesheet" media="all and (orientation:portrait)" href="../css/portrait_horizontaltimelinemaker.css">	
+</head>
+<body>
+
+	<div id="editor_frame" class="small-12 medium-12 large-4 columns">
+		<a id="showeditor" class="warning expanded button" href="#">Hide the editor</a>
+		<div id="editor" class="small-12 medium-12 large-12 columns">
+			
+
+			<!-- timeline information -->
+			<ul class="vertical menu" data-drilldown style="width: 100%" id="m1">
+				<!-- 
+				 <h2>Settings for the timeline</h2>
+				  <li>
+				    <a href="#0">Background image</a>
+				    <ul class="vertical menu" id="m2">
+				      <li>
+				        <input id="background_picture" class="input-group-field" type="url" placeholder="https://pixabay.com/">
+				        <a id="background_picture_set" class="button">Set it!</a>
+				      </li>
+				    </ul>
+				  </li>
+				  <li>
+				    <a href="#0">Background Color</a>
+				    <ul class="vertical menu">
+				      <li>
+				      	<input id="background_color" type="color" name="favcolor" value="#ff0000">
+				      	<a id="background_color_set" class="button">Set it!</a>
+				      </li>
+				    </ul>
+				  </li>
+				</ul>
+			</ul>
+			<hr> -->
+			<!-- -->
+
+			<!-- insert time interval -->
+			<br>
+			<label>
+			    Main title of timeline*: 
+			    <input id="main_title" type="text" placeholder="Hungarian dual citizenship referendum ~ 2004 December 5">
+			</label>
+			<br>
+			<a id="main_title_set" class="button">Set it!</a>
+			<hr>
+			
+			<!-- show the nr of the event -->
+			<br>
+			Current event/all events: 
+			<div id="current_event_and_all"></div>
+			<hr>
+			<!-- Navigator in slides-->
+			<!-- <div id="navigator_buttons" class="button-group"> -->
+			  <a id="Prevslide" class="large button">< Prev event</a>
+			  <a id="Nextslide" class="large button">Next event ></a>
+			  <hr>
+			<!-- </div> -->
+			<!-- -->
+
+			<!-- Background set -->
+
+			<ul class="vertical menu" data-drilldown style="width: 100%" id="m1">
+			<h2>Settings for the event</h2>
+			 <!-- <li>
+			    <a href="#0">Background image</a>
+			    <ul class="vertical menu" id="m2">
+			      <li>
+			        <input id="background_picture" class="input-group-field" type="url" placeholder="https://pixabay.com/">
+			        <a id="background_picture_set" class="button">Set it!</a>
+			      </li>
+			    </ul>
+			  </li>
+			  <li>
+			    <a href="#0">Background Color</a>
+			    <ul class="vertical menu">
+			      <li>
+			      	<input id="background_color" type="color" name="favcolor" value="#ff0000">
+			      	<a id="background_color_set" class="button">Set it!</a>
+			      </li>
+			    </ul>
+			  </li>
+			</ul> -->
+
+			<!-- -->
+
+			<!-- Background set other -->
+			<!--
+			<div class="input-group">
+			    <span class="input-group-label">Background image:</span>
+			    <input type="color" name="favcolor" value="#ff0000">
+			    <input class="input-group-field" type="url" placeholder="https://pixabay.com/">
+				<a class="input-group-button button">Submit</a>
+			</div>
+			-->
+
+			<!-- insert time interval -->
+			<br>
+			<label>
+			    Date/Event*: 
+			    <input id="from_time_interval" type="text" placeholder="2004 December 5 - Hungarian dual citizenship referendum">
+			</label>
+			<br>
+			<!--<label>
+			    Event*: 
+			    <input id="from_time_interval" type="text" placeholder="Hungarian dual citizenship referendum">
+			</label>-->
+			<a id="time_interval_set" class="button">Set it!</a>
+			<hr>
+			<!-- -->
+			
+			<!-- Insert content -->
+			<ul class="vertical menu" data-drilldown style="width: 100%" id="m1">
+			  <li>
+			    <a href="#0">Insert title</a>
+			    <ul class="vertical menu">
+			      <li>
+			      	Insert title
+			      	<input id="title" class="input-group-field" type="text" placeholder="Title of event">
+			        <a id="title_set" class="button">Set it!</a>
+			      </li>
+			    </ul>
+			  </li>
+			  <li>
+			    <a href="#0">Insert media</a>
+			    <ul class="vertical menu" id="m2">
+			      <li>
+			        <a href="#0">Insert picture</a>
+			        <ul class="vertical menu" id="m3">
+			          <li>
+			          	Insert picture (jpg, png, gif, jpeg)
+			          	<input id="picture" class="input-group-field" type="url" placeholder="https://pixabay.com/">
+			          	Describe the picture
+			          	<input id="picture_describe" class="input-group-field" type="text" placeholder="This is a photo about Alice. At the background is panorama of New York.">
+			        	<a id="picture_set" class="button">Set it!</a>
+			          </li>
+			        </ul>
+			      </li>
+			      <li>
+			      	<a href="#0">Insert map</a>
+			        <ul class="vertical menu" id="m3">
+			          <li>
+			          	Insert map
+			          	<input id="map" class="input-group-field" type="url" placeholder="https://www.google.hu/maps/place/Petra/@30.328459,35.4421735,17z/data=!3m1!4b1!4m5!3m4!1s0x15016ef1703b6071:0x199bf908679a2291!8m2!3d30.3284544!4d35.4443622">
+			        	<a id="map_set" class="button">Set it!</a>
+			          </li>
+			        </ul>
+			      </li>
+			      <li>
+			      	<a href="#0">Insert video</a>
+			        <ul class="vertical menu" id="m3">
+			          <li>
+			          	Insert video (YouTube, Vimeo, Veoh, indavideo, metacafe, Twitch, Yahoo)
+			          	<input id="video" class="input-group-field" type="url" placeholder="https://www.youtube.com/watch?v=dGiQaabX3_o">
+			        	<a id="video_set" class="button">Set it!</a>
+			          </li>
+			        </ul>
+			      </li>
+			      <!--<li>
+			      	<a href="#0">Insert sound</a>
+			        <ul class="vertical menu" id="m3">
+			          <li>
+			          	Insert sound (SoundCloud)
+			          	<input id="sound" class="input-group-field" type="url" placeholder="https://soundcloud.com/cherry-tohamy/egyptian-harp">
+			        	<a id="sound_set" class="button">Set it!</a>
+			          </li>
+			        </ul>
+			      </li> -->
+			      <li>
+			      	<a href="#0">Insert a website</a>
+			        <ul class="vertical menu" id="m3">
+			          <li>
+			          	Insert a website
+			          	<input id="website" class="input-group-field" type="url" placeholder="http://muzeumbarat.hu/">
+			        	<a id="website_set" class="button">Set it!</a>
+			          </li>
+			        </ul>
+			      </li>
+			      <li>
+			      	<a href="#0">Insert a prezi</a>
+			        <ul class="vertical menu" id="m3">
+			          <li>
+			          	Insert a prezi
+			          	<input id="prezi" class="input-group-field" type="url" placeholder="http://prezi.com/vqnh4ck9pxow/?utm_campaign=share&utm_medium=copy&rc=ex0share">
+			        	<a id="prezi_set" class="button">Set it!</a>
+			          </li>
+			        </ul>
+			      </li>
+			      <!--<li>
+			      	<a href="#0">Insert a pdf/word/ppt/google docs file</a>
+			        <ul class="vertical menu" id="m3">
+			          <li>
+			          	Insert a pdf/word/ppt/google docs file
+			          	<input id="pdf" class="input-group-field" type="url" placeholder="http://www.hgd1952.hr/pdf_datoteke/Test_document_PDF.pdf">
+			        	<a id="pdf_set" class="button">Set it!</a>
+			          </li>
+			        </ul>
+			      </li> -->
+			      <li>
+			      	<a href="#0">Insert any other shareable file</a>
+			        <ul class="vertical menu" id="m3">
+			          <li>
+			          	Insert any other embedable file (Canva, Storify, Flicker, Instagram, Twitter, Steam, Google book, etc)<br>
+			          	The embed is your proposition! We do not convert the inserted code!
+			          	<input id="shareable" class="input-group-field" type="url" placeholder="https://plus.google.com/105947526527280689898/posts/BeBymxXC9eU">
+			        	<a id="shareable_set" class="button">Set it!</a>
+			          </li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </li>
+			  <li>
+			    <a href="#0">Insert text to event</a>
+			    <ul class="vertical menu">
+			      <li>
+			        <li>
+			          	Insert text to event
+			          	<textarea id="text" placeholder="Do you want the Parliament to pass a law that enables ethnic Hungarians with non-Hungarian citizenship and residence, who affirm their Hungarian nationality, either with a Hungarian identity card described in Par. 19 of Act LXII/2001, or in a way specified in the forthcoming law, to apply for and be granted Hungarian citizenship?"></textarea>
+			        	<a id="text_set" class="button">Set it!</a>
+			        </li>
+			    </ul>
+			  </li>
+			  <li>
+			    <a href="#0">Insert a quote</a>
+			    <ul class="vertical menu">
+			      <li>
+			        <li>
+			          	Insert a quote
+			          	<textarea id="quote" placeholder="Ezzel kárt okoztunk akkor a magyar-magyar kapcsolatoknak, és olyan érzelmeket keltettünk a határon túli magyarságban, amelyek joggal sértették őket. Téves politikai döntés volt, ezért elnézést kérünk mindazoktól, akiket ezzel megsértettünk. – Mesterházy Attila"></textarea>
+			        	<a id="quote_set" class="button">Set it!</a>
+			        </li>
+			    </ul>
+			  </li>
+			  <li>
+			    <a href="#0">Insert a link</a>
+			    <ul class="vertical menu">
+			      <li>
+			        <li>
+			          	Insert a link
+			          	<input id="link" type="url" name="link to attached website">
+			          	Insert title of the link
+			          	<input id="titleoflink" type="text" name="description of the link">
+			        	<a id="link_set" class="button">Set it!</a>
+			        </li>
+			    </ul>
+			  </li>
+			  <!-- <a href="#0" class="cd-read-more">Read more</a> -->
+			</ul>
+			<!-- -->
+
+			<!-- Save -->
+			<!-- <div class="button-group"> -->
+				<a id="delete_the_event" class="alert button">Delete event</a>
+			  	<a id="save_the_event" class="large success button">Save event</a>
+			  	<a id="new_event" class="large warning button">+</a>
+			  	<!-- Share it-->
+			  	<hr>
+				<a id="delete_the_timeline" class="alert button">Delete the timeline!</a>
+			  	<a id="save_the_timeline" class="large success button">Done, share the timeline!</a>
+			<!-- </div> -->
+			<!-- -->
+			<br>
+		</div>
+		.
+	</div>
+	<div id="content" class="small-12 medium-12 large-8 columns">
+		<div id="Timeline">
+			<header>
+				<h1>Responsive Vertical Timeline</h1>
+			</header>
+
+			<section id="cd-timeline" class="cd-container">
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-picture">
+						<img src="img/cd-icon-picture.svg" alt="Picture">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Title of section 1</h2>
+						<iframe width="100%" height="315" src="https://www.youtube.com/embed/ZF9aUdJv2p4" frameborder="0" allowfullscreen></iframe>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+						<a href="#0" class="cd-read-more">Read more</a>
+						<span class="cd-date">Jan 14 - Hungarian dual citizenship referendum</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-picture">
+						<img src="img/cd-icon-picture.svg" alt="Picture">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Title of section 1</h2>
+						<iframe width="100%" height="315" src="https://blog.knowbe4.com/cyber-attack-maps...accurate-or-just-eye-candy" frameborder="0" allowfullscreen></iframe>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+						<a href="#0" class="cd-read-more">Read more</a>
+						<span class="cd-date">Jan 14 - Hungarian dual citizenship referendum</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-movie">
+						<img src="img/cd-icon-movie.svg" alt="Movie">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Title of section 2</h2>
+						<img src="http://www.pavelhaicman.cz/wordpress/wp-content/uploads/2013/09/Stronghold_tags_Celtic_Knot.png" alt="celtic icon">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+						<a href="#0" class="cd-read-more">Read more</a>
+						<span class="cd-date">Jan 18</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-movie">
+						<img src="img/cd-icon-movie.svg" alt="Movie">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Title of section 2</h2>
+						<img src="http://www.pavelhaicman.cz/wordpress/wp-content/uploads/2013/09/Stronghold_tags_Celtic_Knot.png" alt="celtic icon">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+						<a href="#0" class="cd-read-more">Read more</a>
+						<span class="cd-date">Jan 18</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-movie">
+						<img src="img/cd-icon-movie.svg" alt="Movie">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Title of section 2</h2>
+						<img src="http://www.pavelhaicman.cz/wordpress/wp-content/uploads/2013/09/Stronghold_tags_Celtic_Knot.png" alt="celtic icon">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+						<a href="#0" class="cd-read-more">Read more</a>
+						<span class="cd-date">Jan 18</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-picture">
+						<img src="img/cd-icon-picture.svg" alt="Picture">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Title of section 3</h2>
+						<iframe src="https://goo.gl/maps/X54cDeJCofG2" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
+						<a href="#0" class="cd-read-more">Read more</a>
+						<span class="cd-date">Jan 24</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-location">
+						<img src="img/cd-icon-location.svg" alt="Location">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Title of section 4</h2>
+						<iframe src="https://player.vimeo.com/video/207295267?badge=0" width="100%" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<p><a href="https://vimeo.com/207295267">An Incredible Journey - Directors Cut</a> from <a href="https://vimeo.com/gtimage">geoff tompkinson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+						<a href="#0" class="cd-read-more">Read more</a>
+						<span class="cd-date">Feb 14</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-location">
+						<img src="img/cd-icon-location.svg" alt="Location">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Title of section 5</h2>
+						
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
+						<a href="#0" class="cd-read-more">Read more</a>
+						<span class="cd-date">Feb 18</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-movie">
+						<img src="img/cd-icon-movie.svg" alt="Movie">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Final Section</h2>
+						<p>This is the content of the last section</p>
+						<span class="cd-date">Feb 26</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+			</section> <!-- cd-timeline -->
+		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/main.js"></script> --> <!-- Resource jQuery -->
+		</div> 
+	</div>
+	<div id="large_content" class="small-12 medium-12 large-12 columns">
+			<div id="Timeline">
+			<header>
+				<h1>Responsive Vertical Timeline</h1>
+			</header>
+
+			<section id="cd-timeline" class="cd-container">
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-picture">
+						<img src="img/cd-icon-picture.svg" alt="Picture">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Title of section 1</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+						<a href="#0" class="cd-read-more">Read more</a>
+						<span class="cd-date">Jan 14</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-movie">
+						<img src="img/cd-icon-movie.svg" alt="Movie">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Title of section 2</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+						<a href="#0" class="cd-read-more">Read more</a>
+						<span class="cd-date">Jan 18</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-picture">
+						<img src="img/cd-icon-picture.svg" alt="Picture">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Title of section 3</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
+						<a href="#0" class="cd-read-more">Read more</a>
+						<span class="cd-date">Jan 24</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-location">
+						<img src="img/cd-icon-location.svg" alt="Location">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Title of section 4</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+						<a href="#0" class="cd-read-more">Read more</a>
+						<span class="cd-date">Feb 14</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-location">
+						<img src="img/cd-icon-location.svg" alt="Location">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Title of section 5</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
+						<a href="#0" class="cd-read-more">Read more</a>
+						<span class="cd-date">Feb 18</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-movie">
+						<img src="img/cd-icon-movie.svg" alt="Movie">
+					</div> <!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>Final Section</h2>
+						<p>This is the content of the last section</p>
+						<span class="cd-date">Feb 26</span>
+					</div> <!-- cd-timeline-content -->
+				</div> <!-- cd-timeline-block -->
+			</section> <!-- cd-timeline -->
+		</div> 
+	</div>
+
+	<script src="../js/horizontaltimelinemaker.js"></script>
+	<script src="../js/vertical_timeline_generator.js"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
+
+
+	<script src="../js/vendor/jquery.js"></script>
+	<script src="../js/vendor/what-input.js"></script>
+	<script src="../js/vendor/foundation.js"></script>
+	<script src="../js/app.js"></script>
+</body>
+</html>
