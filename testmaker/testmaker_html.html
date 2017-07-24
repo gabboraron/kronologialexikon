@@ -80,6 +80,17 @@
 	  		<h1> Most nem menthetsz! </h1>
 	  		<p> Nincs kitöltve a kérdőív! </p>
 	  </div>
+
+		<div id="php_saver_box"> 
+			<H1>Remek! Kész vagy!</H1>
+			<p>Küldd el a servernek a munkád, hogy mások is láthassák!</p>
+			<form method="post" action="testmaker.php">
+	    		<input type="hidden" name="html_php" id="html_php" />
+	    		<input type="hidden" name="keywords_php" id="keywords_php" />
+	    		<input type="hidden" name="cover_php" id="cover_php" />
+	    		<input type="submit" name="submit_php" id="submit_php" value="Küldés servernek!" class="large success button"/>
+	  		</form>
+		</div>
 	  
 	  <button class="close-button" data-close aria-label="Close reveal" type="button">
 	    <span aria-hidden="true">&times;</span>
