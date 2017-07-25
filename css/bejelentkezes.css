@@ -65,3 +65,7 @@ li {
 	background-color: red;
 	color: white;
 }
+
+#emlekezteto_mail_kuldese{
+	display: none;
+}
